@@ -1,0 +1,46 @@
+form{
+	margin-top: 15px;
+	.fe-wrap, .field{
+		@extend .clearfix;
+		min-height: 30px;
+		width: 100%;
+		margin-bottom: 5px;
+		position: relative;
+
+		input[type='radio'], input[type='checkbox']{
+			width:initial;
+		}
+
+		label{
+			width: 245px;
+		}
+	}
+}
+
+.error{
+	color: #b94a48;
+	float: left;
+	margin-left: 10px;
+}
+
+.nod {
+	position: relative;
+	.nod_msg{
+		left: 125px;
+		top: 15px;
+	}
+}
+.nod_msg{
+	color: red;
+	background: mistyrose;
+	top: 8px;
+	position: absolute;
+	display: inline;
+	padding: 0 10px;
+}
+
+.val {
+	.nod_msg {
+		left: 225px;
+	}
+}

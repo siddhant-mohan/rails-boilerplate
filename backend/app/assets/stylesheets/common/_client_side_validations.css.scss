@@ -1,0 +1,6 @@
+.field_with_errors{
+	.message{
+		@extend .alert-danger;
+		padding: 0 10px;
+	}
+}

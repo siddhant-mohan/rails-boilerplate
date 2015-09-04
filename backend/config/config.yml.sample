@@ -1,0 +1,20 @@
+# this file should have indent of 2 spaces
+
+# general/default configuration
+defaults: &defaults
+  host:
+    url: 'url for the boilerplate'
+  mailer:
+    enable_starttls_auto: true
+    address: 'smtp.gmail.com'
+    port: '587'
+    authentication: 'plain'
+    username: 'username for the default sender address'
+    password: 'password'
+    recipient: 'recipent mail address'
+
+# Environment Specific Configuration
+development:
+  <<: *defaults
+  host:
+    url: 'localhost'

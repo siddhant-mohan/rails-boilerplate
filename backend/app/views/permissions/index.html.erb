@@ -1,0 +1,23 @@
+<div class="manage-section">
+<h1>Listing Permissions</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Action</th>
+      <th>Subject</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @permissions.each do |permission| %>
+      <tr>
+        <td><%= permission.title %></td>
+        <td><%= permission.action %></td>
+        <td><%= permission.subject %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

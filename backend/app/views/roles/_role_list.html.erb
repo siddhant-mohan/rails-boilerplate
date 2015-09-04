@@ -1,0 +1,22 @@
+<div class="manage-section">
+  <h1>Listing Roles</h1>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3">Action</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @roles.each do |role| %>
+      <tr>
+        <td><%= role.name %></td>
+        <td><%= role.description %></td>
+        <td><%= link_to 'Destroy', revoke_role_users_path(:user_id => @user.id,:role_id =>  role.id), method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger" %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

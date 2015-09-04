@@ -1,0 +1,120 @@
+body {
+	background-image: url('/assets/pattern.jpg');
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.item {
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+main {
+	width: 100%;
+	height: 100%;
+	/*min-height: 500px;*/
+	//text-shadow: 1px 1px #888888;
+	.contentmain {
+		box-shadow: 1px 0px 10px #888888;
+		width: 80%;
+		min-width: 800px;
+		max-width: 1000px;
+		margin: auto;
+		height: 450px;
+		.imagemain {
+			float: left;
+			width: 65%;
+			height: 450px;
+			img {
+				height: 450px;
+			}
+		}
+		.loginmain {
+			background: white;
+			padding-top: 2%;
+			float: right;
+			width: 35%;
+			height: 450px;
+			.login-button {
+				background-color: #28a9e0;
+				width: 100%;
+				font-family: Lucida Console;
+				border-radius: 0px;
+				font-weight: bolder;
+			}
+			.forgot-password {
+				margin-left: 15%;
+				margin-top: 10px;
+			}
+			h3 {
+				font-family: Lucida Console;
+				color: #4D585C;
+				width: 80%;
+				margin: auto;
+			}
+			h5 {
+				font-family: tahoma;
+				color: #4D585C;
+				font-weight: normal;
+				margin-bottom: 3px;
+				// width:80%;
+				// margin:auto;
+			}
+			hr {
+				width: 90%;
+				border-color: #CED0CF;
+				margin: auto;
+			}
+			form {
+				padding-top: 5%;
+				width: 70%;
+				margin: auto;
+				.email, .password {
+					height: 30px;
+					border-radius: 0px;
+					width: 100%;
+					margin-bottom: 0px;
+					-webkit-box-shadow: inset 0 0 2px #888888;
+				}
+				button {
+				}
+			}
+			.tags {
+				font-family: tahoma;
+				width: 70%;
+				margin: auto;
+				span {
+					font-family: tahoma;
+					background: url('/assets/tick.png') no-repeat;
+					padding-left: 30px;
+					color: #4D585C;
+				}
+			}
+		}
+	}
+	.footer-main {
+		width: 80%;
+		margin: auto;
+		font-family: Tahoma;
+		bottom: 0px;
+		div {
+			float: right;
+			color: #4D585C;
+			margin-right: auto;
+			a {
+				color: #4D585C;
+				text-decoration: none;
+				font-size: 12px;
+				padding: 0px 5px 0px 5px;
+			}
+		}
+		&:after {
+			display: block;
+			content: "";
+			clear: both;
+		}
+	}
+}

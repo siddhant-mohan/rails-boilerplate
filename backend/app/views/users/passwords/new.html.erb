@@ -1,0 +1,18 @@
+<div id="forget-password" class="centered-card clearfix">
+  <div>Forgot your password?</div>
+  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:method => :post}) do |f| %>
+    <% if !resource.errors.empty? %>
+     <p class = "alert alert-danger">Not a registered Email Address,Please enter a valid Email address </p>
+    <% end %>
+
+    <div class = "clearfix"><%= f.label :email, :class => "Ulabel" %>
+      <%= f.email_field :email, :autofocus => true ,:class => "password-field" %>
+    </div>
+
+    <div class ="clearfix">
+      <%= f.submit "Send Instructions",:class => "mbutton" %>
+    </div>
+
+  <% end %>
+  <div><p>If you don't have a registered Email Id,Please Contact Administration </p></div>
+</div>

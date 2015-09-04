@@ -1,0 +1,59 @@
+.manage-section{
+	min-height: 400px;
+	margin-top: 20px;
+	padding: 15px;
+	background: white;
+	overflow: auto;
+	& > h4 {
+		margin-top: 100px;
+		margin-right: 2cm;
+	}
+	&>h2 {
+		margin: 0 0 10px 0;
+		border-bottom: 1px solid #dddddd;
+		padding-bottom: 5px;
+	}
+	&>h3{
+		margin-top: 0px;
+	}
+	.table{
+		margin-top: 10px;
+	}
+	.U-heading {
+		float: right;
+		margin-right: 50%;
+	}
+	.U-button {
+		float: right;
+		margin-bottom: 5px;
+		margin-left: 15px;
+	}
+	.U-buttonC {
+		float: right;
+
+	}
+	.U-search {
+		float: left;
+		margin-bottom: 15px;
+		margin-left: 15px;
+	}
+	.U-searchB {
+		float: left;
+		margin-bottom: 15px;
+		margin-left: 10px;
+	}
+}
+
+.table th .current {
+	padding-right: 25px;
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
+.table th .asc {
+	background-image: asset_url('arrow-up-icon.png');
+}
+
+.table th .desc {
+	background-image: asset_url('arrow-down-icon.png');
+}

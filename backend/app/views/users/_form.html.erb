@@ -1,0 +1,35 @@
+<%= form_for(@user) do |f| %>
+  <!--rendering form errors via a partial-->
+  <%= render :partial => 'layouts/form_errors', :object => @user.errors %>
+  <div class="field">
+    <%= f.label :uid, :class => "Ulabel" %>
+    <%= f.text_field :uid %>
+  </div>
+  <div class="field">
+    <%= f.label :firstname, "First Name", :class => "Ulabel" %>
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :lastname, "Last Name", :class => "Ulabel" %>
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :email, "Email_id", :class => "Ulabel" %>
+    <%= f.email_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.label :status, :class => "Ulabel" %>
+    <%= f.check_box('status', {}, 'active', 'inactive') %>
+  </div>
+  <div class="actions">
+    <%= f.submit :class => "text btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<div class="centered-card">
+	<header id='login-header'>CE Login</header>
+	<%= form_tag user_session_path, :method => 'post' do %>
+	<div class='fe-wrap'>
+		<%= label_tag 'user_name', 'Username: ' %>
+		<%= text_field_tag 'user_name', nil, :placeholder => 'Username or email' %>
+	</div>
+	<div class='fe-wrap'>
+		<%= label_tag 'password', 'Password: ' %>
+		<%= text_field_tag 'password', nil , :placeholder => 'Password' %>
+	</div>
+	<div class='fe-wrap'>
+		<%= submit_tag 'Log In' %>
+	</div>
+	<div class='fe-wrap'>
+		<a id='forgot-password-btn' onclick="home.forgotPassword()">Forgot your password?</a>
+	</div>
+	<% end %>
+</div>

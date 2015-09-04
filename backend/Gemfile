@@ -1,0 +1,61 @@
+source 'https://rubygems.org'
+# fixing the ruby version
+ruby '2.2.0'
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails'
+
+# rake task
+gem 'rake'
+# action mailer for sending the emails
+gem 'actionmailer'
+# Use ActiveModel has_secure_password
+gem 'bcrypt'
+# devise for authentication
+gem 'devise'
+# cancan for authorization
+gem 'cancancan'
+# Use pg as the database for Active Record
+gem 'pg'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.0'
+# Use thin as the app server
+gem 'thin'
+gem 'nokogiri'
+gem 'oauth'
+gem 'omniauth'
+gem 'omniauth-linkedin'
+
+# this group cannot be named assets because that name creates problem
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+gem 'client_side_validations', :git => 'https://github.com/DavyJonesLocker/client_side_validations.git'
+# Use twitter bootstrap
+gem 'twitter-bootstrap-rails'
+# Use SCSS for stylesheets
+gem 'sass-rails'
+# using font awesome for icons
+gem 'font-awesome-rails'
+# bootstrap for base css
+gem 'bootstrap-sass'
+# Use CoffeeScript for .js.coffee assets and views
+gem 'coffee-rails'
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier'
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'therubyracer', platforms: :ruby
+group :development, :test do
+	# for annotating model for its properties automatically
+	gem 'annotate'
+	# byebug for command line debugging
+	gem 'byebug'
+	# Access an IRB console on exception pages or by using <%= console %> in views
+	gem 'web-console', '~> 2.0'
+end
+
+group :doc do
+	# bundle exec rake doc:rails generates the API under doc/api.
+	gem 'sdoc', :require => false
+end

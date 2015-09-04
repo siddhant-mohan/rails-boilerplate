@@ -1,0 +1,11 @@
+<div class="name">
+	<%= link_to 'QUIKCHEX', root_url%>
+</div>
+
+<%= yield :app_header %>
+<% if current_user %>
+	<div id="user-info">
+		Welcome <%= current_user.fullname %>
+		<%= link_to 'Logout Now', sign_out_path %>
+	</div>
+<% end %>

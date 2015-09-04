@@ -1,0 +1,15 @@
+.modal-backdrop{
+	bottom: 0;
+	z-index: 900;
+}
+
+.modal-dialog{
+	.help-wrapper {
+		z-index: -1;
+	}
+	&.help-shown{
+		.help-wrapper {
+			z-index: 1;
+		}
+	}
+}
