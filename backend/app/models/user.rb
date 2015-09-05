@@ -11,7 +11,7 @@ class User < AppBaseModel
 	has_many :permissions, :through => :roles
 
 	validates :firstname, :lastname, :presence => true
-	validates_presence_of :uid
+	# validates_presence_of :uid
 	validates :uid, uniqueness: true
 	validates_length_of :email, :maximum => 255
 	validates_length_of :encrypted_password, :maximum => 255

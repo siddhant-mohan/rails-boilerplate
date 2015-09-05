@@ -9,6 +9,7 @@ before_filter :configure_account_update_params, only: [:update]
 
   # POST /resource
   def create
+    debugger
     super
   end
 
@@ -40,7 +41,9 @@ before_filter :configure_account_update_params, only: [:update]
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.for(:sign_up) << :attribute
+    devise_parameter_sanitizer.for(:sign_up) << :firstname
+    devise_parameter_sanitizer.for(:sign_up) << :lastname
+    devise_parameter_sanitizer.for(:sign_up) << :email
   end
 
   # If you have extra params to permit, append them to the sanitizer.
