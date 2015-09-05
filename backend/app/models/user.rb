@@ -8,11 +8,10 @@ class User < AppBaseModel
 	enum status: [:inactive, :active]
 	has_many :user_auths, :dependent => :destroy
 	has_and_belongs_to_many :roles, -> { uniq }
-	has_many :permissions, :through => :roles
 
 	validates :firstname, :lastname, :presence => true
 	# validates_presence_of :uid
-	validates :uid, uniqueness: true
+	# validates :uid, uniqueness: true
 	validates_length_of :email, :maximum => 255
 	validates_length_of :encrypted_password, :maximum => 255
 	validates_length_of :reset_password_token, :maximum => 255
@@ -24,28 +23,9 @@ class User < AppBaseModel
 	validates_length_of :unconfirmed_email, :maximum => 255
 
 	before_validation :strip_whitespaces
+	has_one :secret_code
+	attr_accessor :code, :codes_available
 
-	def self.search(params)
-		if params[:search_name].present? and params[:search_uid].present?
-			arr=params[:search_name].split
-			if arr.length == 2
-				where('uid ILIKE ? AND (firstname ILIKE ? AND lastname ILIKE ?)', "#{params[:search_uid]}%", "%#{arr[0]}%", "%#{arr[1]}%")
-			elsif arr.length == 1
-				where('uid ILIKE  ? AND(firstname ILIKE ? OR lastname ILIKE ?)', "#{params[:search_uid]}%", "%#{arr[0]}%", "%#{arr[0]}%")
-			end
-		elsif params[:search_name].present?
-			arr=params[:search_name].split
-			if arr.length == 2
-				where('firstname ILIKE ? AND lastname ILIKE ?', "%#{arr[0]}%", "%#{arr[1]}%")
-			elsif arr.length == 1
-				where('firstname ILIKE ? OR lastname ILIKE ?', "%#{arr[0]}%", "%#{arr[0]}%")
-			end
-		elsif params[:search_uid].present?
-			where('uid ILIKE  ?', "%#{params[:search_uid]}%")
-		else
-			all
-		end
-	end
 
 	def fullname
 		"#{firstname} #{lastname}"
