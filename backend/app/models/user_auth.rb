@@ -1,4 +1,4 @@
-class UserAuth < ActiveRecord::Base
+class UserAuth < AppBaseModel
 	belongs_to :user
 
 	validates :uid, :provider, :user_id, :presence => true

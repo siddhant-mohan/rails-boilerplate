@@ -1,7 +1,9 @@
-class User < ActiveRecord::Base
+require 'app_base' # user model is used early by devise. hence require is needed
+
+class User < AppBaseModel
 	# Include default devise modules. Others available are:
 	# :confirmable, :lockable, :timeoutable and :omniauthable
-	devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
+	devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :registerable
 
 	enum status: [:inactive, :active]
 	has_many :user_auths, :dependent => :destroy

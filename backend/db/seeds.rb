@@ -13,7 +13,6 @@ super_admin.save!
 
 def seed_from_csv(model)
 	csv_file_name = model.to_s.underscore
-	debugger
 	path = "#{Rails.root}/db/data/#{csv_file_name}.csv"
 	model.import_from_csv path
 end
