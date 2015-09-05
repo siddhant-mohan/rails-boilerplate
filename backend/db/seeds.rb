@@ -7,18 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 super_admin = User.create :email => 'mohan.siddhant2000@gmail.com', :password => 'super_admin', :firstname => 'Super',
-													:lastname => 'Admin', :status=>:active , :uid => 'superadmin'
+													:lastname => 'Admin'
 super_admin.save!
 
+role = Role.create :name => 'admin', :description => 'powerfull admin'
+role.save!
 
-def seed_from_csv(model)
-	csv_file_name = model.to_s.underscore
-	path = "#{Rails.root}/db/data/#{csv_file_name}.csv"
-	model.import_from_csv path
-end
+super_admin.roles << role
 
-all_models = [Permission]
-
-all_models.each do |model|
-	seed_from_csv model
-end
+secret_code = SecretCode.create :code => 'dkjecsa'
+secret_code.save!

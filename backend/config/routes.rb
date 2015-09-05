@@ -1,4 +1,5 @@
 Backend::Application.routes.draw do
+  	resources :secret_codes
 	resources :roles do
 		collection do
 			post 'assign_permission'
