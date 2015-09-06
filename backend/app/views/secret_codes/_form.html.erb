@@ -1,9 +1,12 @@
+<div id="form-template" class='code-form'>
 <%= form_tag(secret_codes_path, method: "post", remote: true) do %>
-    <div class="field">
-      <%= label_tag(:no_of_code, "No of codes") %>
-      <div class="check"><%= select_tag "no_of_codes", options_for_select(@count,10)%></div>
+<div class = 'row'>
+    <div class="field col-md-4">
+      <div class = 'col-md-6'><%= label_tag(:no_of_code, "No of codes") %></div>
+      <div class="check col-md-6"><%= select_tag "no_of_codes", options_for_select(@count,10)%></div>
     </div>
-    <div class="actions">
+    <div class="actions col-md-2">
       <%= submit_tag("Generate codes", :class => "text btn btn-primary") %>
     </div>
 <% end %>
+</div>

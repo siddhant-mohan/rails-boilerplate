@@ -5,7 +5,6 @@ class User < AppBaseModel
 	# :confirmable, :lockable, :timeoutable and :omniauthable
 	devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :registerable
 
-	enum status: [:inactive, :active]
 	has_many :user_auths, :dependent => :destroy
 	has_and_belongs_to_many :roles, -> { uniq }
 

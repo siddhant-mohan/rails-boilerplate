@@ -55,7 +55,6 @@ main {
 #main-content{
 	@extend .container-fluid;
 	margin: 0;
-	padding-top: $breadcrumb-height;
 }
 
 section {
