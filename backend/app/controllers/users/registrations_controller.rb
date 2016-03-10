@@ -1,11 +1,9 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 before_filter :configure_sign_up_params, only: [:create]
 before_filter :configure_account_update_params, only: [:update]
-around_filter :set_code, only: [:create]
 
   # GET /resource/sign_up
   def new
-    @codes_available = SecretCode.where(:user_id => nil)[0].code
     super
   end
 
@@ -60,20 +58,5 @@ around_filter :set_code, only: [:create]
   # The path used after sign up for inactive accounts.
   def after_inactive_sign_up_path_for(resource)
     super(resource)
-  end
-
-  def set_code
-    if params[:user][:code] and params[:user][:code] == params[:user][:codes_available]
-      yield
-      if @user
-        @concerned_code = SecretCode.where(:code => params[:user][:code])[0]
-        @concerned_code.user_id = @user.id
-        @concerned_code.save
-      end
-    else
-      respond_to do |format|
-        format.html {redirect_to sign_up_users_path}
-      end
-    end
   end
 end

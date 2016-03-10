@@ -1,0 +1,24 @@
+#breadcrumbs_and_help{
+	margin: 0;
+	z-index: 10;
+	background: #eeeeee;
+	position: fixed;
+	height: $breadcrumb-height;
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+	box-shadow: 0 1px 3px -2px;
+}
+
+#left-pane-toggle{
+	padding: 0 10px;
+	height: $breadcrumb-height;
+	line-height: $breadcrumb-height;
+}
+
+#help-btn-wrap{
+	float: right;
+	margin: 0;
+	.help-icon{
+
+	}
+}

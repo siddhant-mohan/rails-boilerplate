@@ -1,0 +1,60 @@
+#breadcrumbs {
+	line-height: $breadcrumb-height;
+	color: $grey_a;
+	display: inline-block;
+	a {
+		display: block;
+		float: left;
+		background: $gray;
+		padding-right: 10px;
+		height: $breadcrumb-height;
+		margin-right: 31px;
+		position: relative;
+		text-decoration: none;
+		color: $grey_a;
+
+		&:last-of-type {
+			margin-right: 25px;
+		}
+
+		&:before, &:after {
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+			position: absolute;
+			top: 0;
+		}
+		&:before {
+			left: -$breadcrumb-height;
+			border: 15px solid $gray;
+			border-left-color: transparent;
+		}
+		&:after {
+			right: -$breadcrumb-height;
+			border: 15px solid transparent;
+			border-left-color: $gray;
+		}
+
+		&:first-of-type {
+			padding-left: 15px;
+
+			&:before {
+				display: none;
+			}
+		}
+
+		&:hover {
+			background: $skyblue;
+			color: #fff;
+			text-decoration: none;
+			&:before {
+				border-color: $skyblue;
+				border-left-color: transparent;
+			}
+			&:after {
+				border-left-color: $skyblue;
+			}
+		}
+	}
+}

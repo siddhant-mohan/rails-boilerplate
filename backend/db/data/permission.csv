@@ -1,0 +1,14 @@
+title,action,subject
+"read permission",read,Permission
+"create user",create,User
+"read user",read,User
+"update user",update,User
+"delete user",destroy,User
+"Assign role to user ",assign_permission,User
+"Revoke role from user ",revoke_permission,User
+"Assign permission to role ",assign_permission,Role
+"Revoke permission from role ",revoke_permission,Role
+"create a role",create,Role
+"read a role ",read,Role
+"update a role ",update,Role
+"destroy a role ",destroy,Role

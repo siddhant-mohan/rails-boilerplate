@@ -13,6 +13,8 @@ class Users::SessionsController < Devise::SessionsController
       message = 'Not Authorized'
       if user.nil?
         message = 'Sorry this User does not exist.'
+      # elsif !user.active?
+      #   message = 'Cannot login because user is not active.'
       elsif user.valid_password?(params[:user][:password]) #Check the password validtity
         sign_in(:user, user) #Sign in the user
         unless current_user.nil?

@@ -1,4 +1,6 @@
 <%= form_for(@user) do |f| %>
+  <!--rendering form errors via a partial-->
+  <%= render :partial => 'layouts/form_errors', :object => @user.errors %>
   <div class="field">
     <%= f.label :uid, :class => "Ulabel" %>
     <%= f.text_field :uid %>

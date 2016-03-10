@@ -21,6 +21,10 @@ gem 'pg'
 gem 'jbuilder', '~> 2.0'
 # Use thin as the app server
 gem 'thin'
+gem 'nokogiri'
+gem 'oauth'
+gem 'omniauth'
+gem 'omniauth-linkedin'
 
 # this group cannot be named assets because that name creates problem
 # Use jquery as the JavaScript library

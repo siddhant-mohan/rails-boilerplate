@@ -1,1 +1,65 @@
-<p id="notice"><%= notice %></p>
+<div class="manage-section container-fluid">
+  <div class="row-fluid clearfix">
+    <h2 class="col-md-8">Details </h2>
+
+    <div class="col-md-4">
+      <%= link_to 'Edit', edit_user_path(@user), :class => 'btn btn-primary' %>
+      <%= link_to 'Back', users_path(@users), :class => 'btn btn-primary' %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="col-md-4">
+      <table class="table table-bordered">
+        <tr>
+
+          <td>uid:</td>
+          <td> <%= @user.uid %></td>
+        </tr>
+        <tr>
+          <td>first name:</td>
+          <td><%= @user.firstname %></td>
+        </tr>
+        <tr>
+          <td>Last name</td>
+
+          <td><%= @user.lastname %></td>
+        </tr>
+
+        <tr>
+          <td>Email_id:</td>
+
+          <td><%= @user.email %></td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td> <%= @user.status %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="field clearfix">
+    <button type="button" id="b3" class="btn btn-primary pull-right" data-toggle="modal" data-target="#roleModal">
+      Add New Role
+    </button>
+  </div>
+
+  <div class="modal fade in" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Add new Role</h4>
+        </div>
+        <div class="modal-body">
+          <%= render 'users/role_form' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <%= render 'roles/role_list' %>
+  </div>
+</div>
